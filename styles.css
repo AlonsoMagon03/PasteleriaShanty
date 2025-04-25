@@ -1,0 +1,441 @@
+/* Estilos base - Mobile First */
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_header img {
+    display: block;
+    width: 20em;
+    max-width: 25%;
+    height: auto;
+    margin: 0 auto;
+}
+.img_header{
+    width: 100%;
+    height: 100%;
+    background-image: url(imagenes/mantel_picnic.png);
+    background-size: auto;
+    background-position: center;
+}
+
+.titulo h1 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 1rem 3%;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    padding: 1.25rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 5%;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 95%;
+    padding: 0.55rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.pregunta p{
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.rating-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating-labels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.rating-stars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    direction: rtl; /* Mantenemos la inversión visual */
+}
+
+.rating-stars > input {
+    display: none;
+}
+
+.rating-stars > label {
+    color: #ccc;
+    font-size: 2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.rating-stars > label:before {
+    content: '★';
+
+}
+
+/* Colorea la estrella seleccionada y todas las anteriores (a la izquierda visual) */
+.rating-stars > input:checked ~ label {
+    color: gold;
+}
+
+/* Asegura que la estrella seleccionada también se coloree */
+.rating-stars > input:checked + label {
+    color: gold;
+}
+
+/* Estilo para el hover (opcional, para retroalimentación visual) */
+.rating-stars > label:hover,
+.rating-stars > label:hover ~ label {
+    color: gold;
+}
+.opciones-personalizadas {
+    display: flex;
+    gap: 15px; /* Espacio entre las opciones */
+}
+.rating-stars > label:before {
+    content: '★';
+    text-shadow: 0.5px 0.5px 1px #f0f0f0,
+                    -0.5px -0.5px 1px #f0f0f0,
+                    0.5px -0.5px 1px #f0f0f0,
+                 -0.5px 0.5px 1px #f0f0f0; /* Sombra sutil alrededor */
+}
+
+.rating-stars > input:checked + label:before,
+.rating-stars > label:hover:before,
+.rating-stars > label:hover ~ label:before {
+    text-shadow: 0.5px 0.5px 1px gold,
+                    -0.5px -0.5px 1px gold,
+                    0.5px -0.5px 1px gold,
+                 -0.5px 0.5px 1px gold; /* Sombra sutil en dorado */
+}
+
+input[type="checkbox"]:checked {
+    accent-color: rgb(211,34,60);
+}
+textarea[name="sugerencias"] {
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer {
+    color: #ffffff; 
+    text-align: center; 
+    font-size: 0.9em; 
+    border-top: 1px solid #ccc; 
+}
+.img_footer{
+    width: 100%;
+    height: 100%;
+    background-image: url(imagenes/mantel_picnic.png);
+    background-size: auto;
+    background-position: center;
+}
+
+footer p {
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 10px; 
+    padding: 15px;
+}
+
+footer ul {
+    font-family: 'Quicksand', sans-serif;
+    list-style: none; 
+    padding: 0;
+    margin: 0 0 15px 0; 
+    display: flex; 
+    justify-content: center; 
+}
+
+footer ul li {
+    margin: 0 10px; /
+}
+
+footer ul li a {
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+footer ul li a:hover {
+    color: #007bff; 
+}
+
+.redes-sociales a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.redes-sociales img {
+    width: 24px; 
+    height: 24px;
+    vertical-align: middle; 
+    padding: 10px;
+}
+@media (max-width: 600px) {
+    textarea[name="sugerencias"] {
+        font-size: 0.9em; /* Un tamaño de fuente más pequeño si es necesario */
+        resize: none; /* O la opción de redimensionamiento que prefieras */
+    }
+}
+/* Media Queries para diferentes tamaños */
+@media (min-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .titulo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .form-group label {
+        font-size: 1.2rem;
+    }
+    textarea[name="sugerencias"] {
+        font-size: 0.9em; /* Un tamaño de fuente más pequeño si es necesario */
+        resize: none; /* O la opción de redimensionamiento que prefieras */
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width: 700px;
+        padding: 2rem;
+    }
+    
+    header img {
+        width: 10em;
+    }
+    
+    .titulo h1 {
+        font-size: 1.8rem;
+    }
+    textarea[name="sugerencias"] {
+        font-size: 0.9em; /* Un tamaño de fuente más pequeño si es necesario */
+        resize: none; /* O la opción de redimensionamiento que prefieras */
+    }
+}
+
+/* Resto de estilos (spinner, botones, checkbox, etc) se mantienen igual */
+.error-message {
+    color: #d32f2f;
+    background-color: #fde8e8;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d32f2f;
+    display: none;
+}
+
+.spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s ease-in-out infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+button[type="submit"] {
+    background-color: rgb(211,34,60);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color:  rgb(213,32,97);
+}
+
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ... tus estilos CSS rasca y gana  ... */
+.contenedor-pagina-cupon {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: flex-start; /* Ajusta según la alineación vertical deseada */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 600px; /* Ejemplo: Ancho máximo para celulares */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 10px; /* Elimina márgenes predeterminados */
+    background-color: #f4f4f4; /* O el color de fondo que desees para esta página */
+}
+
+.contenedor-cupon {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    width: 100%; /* Ocupa el 100% del ancho de su contenedor (.contenedor-pagina-cupon) */
+    max-width: 600px; /* Establece un ancho máximo para pantallas más grandes */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+}
+
+
+#codigoCupon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: none; /* Inicialmente oculto */
+}
+
+#codigoValor {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+
+
+.instrucciones {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.detalles-cupon h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.detalles-cupon p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.boton-tienda {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.boton-tienda:hover {
+    background-color: #1e7e34;
+}
+
+/* ... tus estilos CSS existentes ... */
+
+.raspar-area {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%; /* Cambiar a 100% */
+    max-width: 400px; /* Mantener un ancho máximo */
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box; /* Asegurar que el padding no cause desbordamiento */
+}
+
+#mensajeCupon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em; /* Aumenta el tamaño del texto */
+    font-weight: bold;
+    color: #28a745;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.descuento {
+    color: #dc3545;
+}
+
+#rasparCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: grab;
+    z-index: 1;
+}
